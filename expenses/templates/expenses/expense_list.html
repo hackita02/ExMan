@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex Man!!!!!</title>
+</head>
+<body>
+
+<table border cellspacing="0">
+    <tr>
+        <th>Date and Time</th>
+        <th>Amount</th>
+        <th>Details</th>
+    </tr>
+    {% for expense in object_list %}
+        <tr>
+            <td>{{ expense.timestamp }}</td>
+            <td>$ {{ expense.amount }}</td>
+            <td>{{ expense.details }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
