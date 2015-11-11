@@ -20,6 +20,13 @@
 </head>
 <body>
 <div class="container">
+    {% if user.is_authenticated %}
+        {{ user }}
+        <a class="btn btn-default" href="{% url "logout" %}">Logout</a>
+    {% else %}
+        LOGIN
+    {% endif %}
+
     <h1>
         {% block header %}
             HEADER GOES HERE
@@ -38,3 +45,4 @@
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
