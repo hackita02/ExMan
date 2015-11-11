@@ -3,3 +3,4 @@ django-extensions==1.5.9
 django-authtools==1.4.0
 ipython==4.0.0
 pytz==2015.7
+djangorestframework==3.3.1
