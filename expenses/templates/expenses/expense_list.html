@@ -1,30 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Ex Man!!!!!</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<table border cellspacing="0">
-    <tr>
-        <th>Date and Time</th>
-        <th>Amount</th>
-        <th>Details</th>
-    </tr>
-    {% for expense in object_list %}
+
+{% block header %}
+    Your expenses
+{% endblock %}
+
+
+{% block content %}
+
+    <p class="pull-right">
+        <a class="btn btn-block btn-primary" href="{% url "add" %}">Add</a>
+    </p>
+
+
+    <table class="table table-condensed table-hover table-bordered">
         <tr>
-            <td>{{ expense.timestamp }}</td>
-            <td>$ {{ expense.amount }}</td>
-            <td>{{ expense.details }}</td>
+            <th>Date and Time</th>
+            <th>Amount</th>
+            <th>Details</th>
         </tr>
-    {% endfor %}
-</table>
-<p>
-    Total: {{ view.total }}
-</p>
+        {% for expense in object_list %}
+            <tr>
+                <td>{{ expense.timestamp }}</td>
+                <td>$ {{ expense.amount }}</td>
+                <td>{{ expense.details }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <p>
+        Total: {{ view.total }}
+    </p>
 
-<a href="{% url "add" %}">Add</a>
 
-</body>
-</html>
+{% endblock %}
+

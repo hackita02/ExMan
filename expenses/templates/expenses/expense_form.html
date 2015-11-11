@@ -1,23 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Ex Man!!!!!</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<form method="post">
-    <ul>
-        {% csrf_token %}
+{% block header %}
+    Add New Expense
+{% endblock %}
 
-        {{ form.as_ul }}
+{% block content %}
+
+    <form method="post">
+        <ul>
+            {% csrf_token %}
+
+            {{ form.as_ul }}
 
 
-        <li>
-            <button>Add</button>
-        </li>
-    </ul>
-</form>
+            <li>
+                <button>Add</button>
+            </li>
+        </ul>
+    </form>
 
-</body>
-</html>
+{% endblock %}
+
