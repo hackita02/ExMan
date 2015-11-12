@@ -8,11 +8,6 @@
 
 {% block content %}
 
-    <p class="pull-right">
-        <a class="btn btn-block btn-primary" href="{% url "add" %}">Add</a>
-    </p>
-
-
     <table class="table table-condensed table-hover table-bordered">
         <tr>
             <th>Date and Time</th>
@@ -30,6 +25,12 @@
     <p>
         Total: {{ view.total }}
     </p>
+
+    <p>
+        <a class="btn-lg btn-primary" href="{% url "add" %}">Add</a>
+    </p>
+
+
 
 
 {% endblock %}
