@@ -20,12 +20,23 @@
 </head>
 <body>
 <div class="container">
-    {% if user.is_authenticated %}
-        {{ user }}
-        <a class="btn btn-default" href="{% url "logout" %}">Logout</a>
-    {% else %}
-        LOGIN
-    {% endif %}
+
+    <p>
+
+        <div class="pull-right">
+            {% if user.is_authenticated %}
+                {{ user }}
+                <a class="btn btn-default" href="{% url "logout" %}">Logout</a>
+            {% else %}
+                <a class="btn btn-primary" href="{% url "login" %}">Login</a>
+            {% endif %}
+        </div>
+
+        <strong>Ex Man!</strong>
+
+    </p>
+
+    <hr/>
 
     <h1>
         {% block header %}
