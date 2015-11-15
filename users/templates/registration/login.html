@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load bootstrap3 %}
+
 
 {% block header %}
     Login
@@ -10,12 +12,12 @@
         <ul>
             {% csrf_token %}
 
-            {{ form.as_ul }}
+            {% bootstrap_form form %}
 
 
-            <li>
+            {% buttons %}
                 <button class="btn btn-primary">login</button>
-            </li>
+            {% endbuttons %}
         </ul>
     </form>
 

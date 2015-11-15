@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from authtools.views import LoginView
+from django.contrib.auth.forms import AuthenticationForm
 
-# Create your views here.
+
+class CustomAuthenticationForm(AuthenticationForm):
+    def clean_username(self):
+        return self.cleaned_data['username'].strip().lower()
+
+
+class CustomLoginView(LoginView):
+    form_class = CustomAuthenticationForm
